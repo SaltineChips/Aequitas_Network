@@ -83,7 +83,7 @@ bool fLiteMode = false;
 bool fEnableInstantX = true;
 int nInstantXDepth = 10;
 int nMNengineRounds = 2;
-int nAnonymizeEndoxCoinAmount = 1000;
+int nAnonymizeAequitasCoinAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
@@ -1073,7 +1073,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "Endox-Coin";
+    const char* pszModule = "Aequitas-Coin";
 #endif
     if (pex)
         return strprintf(
@@ -1103,13 +1103,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\EDX
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\EDX
-    // Mac: ~/Library/Application Support/EDX
-    // Unix: ~/.EDX
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\AEQL
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\AEQL
+    // Mac: ~/Library/Application Support/AEQL
+    // Unix: ~/.AEQL
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "EDX";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "AEQL";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1121,10 +1121,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "EDX";
+    return pathRet / "AEQL";
 #else
     // Unix
-    return pathRet / ".EDX";
+    return pathRet / ".AEQL";
 #endif
 #endif
 }
@@ -1173,7 +1173,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "Endox-Coin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "Aequitas-Coin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1194,7 +1194,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     if (!streamConfig.good())
     {
         boost::filesystem::path ConfPath;
-               ConfPath = GetDataDir() / "Endox-Coin.conf";
+               ConfPath = GetDataDir() / "Aequitas-Coin.conf";
                FILE* ConfFile = fopen(ConfPath.string().c_str(), "w");
                fprintf(ConfFile, "listen=1\n");
                fprintf(ConfFile, "server=1\n");
@@ -1249,7 +1249,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "Endox-Coind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "Aequitas-Coind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1410,7 +1410,7 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong Endox-Coin will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong Aequitas-Coin will not work properly.");
                     strMiscWarning = strMessage;
                     LogPrintf("*** %s\n", strMessage);
                     uiInterface.ThreadSafeMessageBox(strMessage, "", CClientUIInterface::MSG_WARNING);

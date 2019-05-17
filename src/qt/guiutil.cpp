@@ -91,8 +91,8 @@ QFont bitcoinAddressFont()
 
 void setupAddressWidget(QLineEdit *widget, QWidget *parent)
 {
-    widget->setMaxLength(EndoxCoinAddressValidator::MaxAddressLength);
-    widget->setValidator(new EndoxCoinAddressValidator(parent));
+    widget->setMaxLength(AequitasCoinAddressValidator::MaxAddressLength);
+    widget->setValidator(new AequitasCoinAddressValidator(parent));
     widget->setFont(bitcoinAddressFont());
 }
 
@@ -105,10 +105,10 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
     widget->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
 }
 
-bool parseEndoxCoinURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseAequitasCoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
     // NovaCoin: check prefix
-    if(uri.scheme() != QString("Endox-Coin"))
+    if(uri.scheme() != QString("Aequitas-Coin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -138,7 +138,7 @@ bool parseEndoxCoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!EndoxCoinUnits::parse(EndoxCoinUnits::EDX, i->second, &rv.amount))
+                if(!AequitasCoinUnits::parse(AequitasCoinUnits::AEQL, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -156,18 +156,18 @@ bool parseEndoxCoinURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseEndoxCoinURI(QString uri, SendCoinsRecipient *out)
+bool parseAequitasCoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert endoxcoin:// to EndoxCoin:
+    // Convert aequitascoin:// to AequitasCoin:
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("endoxcoin://", Qt::CaseInsensitive))
+    if(uri.startsWith("aequitascoin://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 11, "EndoxCoin:");
+        uri.replace(0, 11, "AequitasCoin:");
     }
     QUrl uriInstance(uri);
-    return parseEndoxCoinURI(uriInstance, out);
+    return parseAequitasCoinURI(uriInstance, out);
 }
 
 QString HtmlEscape(const QString& str, bool fMultiLine)
@@ -492,12 +492,12 @@ TableViewLastColumnResizingFixer::TableViewLastColumnResizingFixer(QTableView* t
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "Endox-Coin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "Aequitas-Coin.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Endox-Coin.lnk
+    // check for Aequitas-Coin.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -574,7 +574,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "Endox-Coin.desktop";
+    return GetAutostartDir() / "Aequitas-Coin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -612,10 +612,10 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         boost::filesystem::ofstream optionFile(GetAutostartFilePath(), std::ios_base::out|std::ios_base::trunc);
         if (!optionFile.good())
             return false;
-        // Write a Endox-Coin.desktop file to the autostart directory:
+        // Write a Aequitas-Coin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=Endox-Coin\n";
+        optionFile << "Name=Aequitas-Coin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -634,7 +634,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the Endox-Coin app
+    // loop through the list of startup items and try to find the Aequitas-Coin app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -668,7 +668,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add Endox-Coin app to startup item list
+        // add Aequitas-Coin app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {
@@ -687,10 +687,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("Endox-Coin-Qt") + " " + tr("version") + " " +
+    header = tr("Aequitas-Coin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  Endox-Coin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  Aequitas-Coin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -699,7 +699,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("Endox-Coin-Qt"));
+    setWindowTitle(tr("Aequitas-Coin-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));

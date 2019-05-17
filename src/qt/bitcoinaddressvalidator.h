@@ -6,12 +6,12 @@
 /** Base48 entry widget validator.
    Corrects near-miss characters and refuses characters that are no part of base48.
  */
-class EndoxCoinAddressValidator : public QValidator
+class AequitasCoinAddressValidator : public QValidator
 {
     Q_OBJECT
 
 public:
-    explicit EndoxCoinAddressValidator(QObject *parent = 0);
+    explicit AequitasCoinAddressValidator(QObject *parent = 0);
 
     State validate(QString &input, int &pos) const;
 

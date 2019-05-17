@@ -1,7 +1,7 @@
 // Copyright (c) 2016-2019 The CryptoCoderz Team / Espers
 // Copyright (c) 2018-2019 The CryptoCoderz Team / INSaNe project
 // Copyright (c) 2018-2019 The Rubix project
-// Copyright (c) 2018-2019 The Endox project
+// Copyright (c) 2018-2019 The Aequitas project
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -369,20 +369,20 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 // Coin base subsidy
 //
 //
-// Reward calculations for 75-years of EDX emissions
-// 100% Remaining EDX   : 8,760,000,000
+// Reward calculations for 75-years of AEQL emissions
+// 100% Remaining AEQL   : 8,760,000,000
 // ----------------------------------
 // 100% for Calculations: 320 blocks per day, ~80 Superblocks, ~240 Normalblocks @ 25% chance Superblock
-// 25% for Superblocks  : (((80 * 1240)*365)*75) 2,715,600,000 EDX
-// 75% for Normalblocks : (((240 * 920)*365)*75) = 6,570,000,000 EDX
+// 25% for Superblocks  : (((80 * 1240)*365)*75) 2,715,600,000 AEQL
+// 75% for Normalblocks : (((240 * 920)*365)*75) = 6,570,000,000 AEQL
 // ----------------------------------
 // (COINS LEFT)       (BLOCKS | 75-Years of minting)
-// Singular Payout Example: 8760000000 / ((((1 * 60 * 60) / (4.5 * 60) * 24) * 365) * 75) = 1000.00 EDX per block
-// Superblock Payout: ~80 blocks per day = 1240.00 EDX per Superblock
-// Regular Payout: ~240 blocks per day = 920.00 EDX per block
-// Daily coins (Regular + Superblock): (80 * 1240) + (240 * 920) = 320,000 per day == 1,000.00 EDX per block avg
-// Yearly coins (Regular + Superblock): ((80 * 1240)*365) + ((240 * 920)*365) = 116,800,000 per year == 1,000.00 EDX per block avg
-// Total coins (Regular + Superblock): (((80 * 1240)*365)*75) + (((240 * 920)*365)*75) = 8,760,000,000 == 100% Remaining EDX
+// Singular Payout Example: 8760000000 / ((((1 * 60 * 60) / (4.5 * 60) * 24) * 365) * 75) = 1000.00 AEQL per block
+// Superblock Payout: ~80 blocks per day = 1240.00 AEQL per Superblock
+// Regular Payout: ~240 blocks per day = 920.00 AEQL per block
+// Daily coins (Regular + Superblock): (80 * 1240) + (240 * 920) = 320,000 per day == 1,000.00 AEQL per block avg
+// Yearly coins (Regular + Superblock): ((80 * 1240)*365) + ((240 * 920)*365) = 116,800,000 per year == 1,000.00 AEQL per block avg
+// Total coins (Regular + Superblock): (((80 * 1240)*365)*75) + (((240 * 920)*365)*75) = 8,760,000,000 == 100% Remaining AEQL
 
 int static generateMTRandom(unsigned int s, int range)
 {

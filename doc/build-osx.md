@@ -7,12 +7,12 @@ software written by Eric Young (eay@cryptsoft.com) and UPnP software written by
 Thomas Bernard.
 
 
-Mac OS X Endox-Coind build instructions
+Mac OS X Aequitas-Coind build instructions
 Laszlo Hanyecz <solar@heliacal.net>
 Douglas Huff <dhuff@jrbobdobbs.org>
 
 
-See readme-qt.rst for instructions on building Endox-Coin QT, the
+See readme-qt.rst for instructions on building Aequitas-Coin QT, the
 graphical user interface.
 
 Tested on 10.5 and 10.6 intel.  PPC is not supported because it's big-endian.
@@ -27,7 +27,7 @@ but you can get the current version from http://developer.apple.com
 
 1.  Clone the github tree to get the source code:
 
-git clone http://github.com/Endox-Coindev/Endox-Coin Endox-Coin
+git clone http://github.com/Aequitas-Coindev/Aequitas-Coin Aequitas-Coin
 
 2.  Download and install MacPorts from http://www.macports.org/
 
@@ -41,14 +41,14 @@ sudo port install boost db48 openssl miniupnpc
 Optionally install qrencode (and set USE_QRCODE=1):
 sudo port install qrencode
 
-4.  Now you should be able to build Endox-Coind:
+4.  Now you should be able to build Aequitas-Coind:
 
-cd Endox-Coin/src
+cd Aequitas-Coin/src
 make -f makefile.osx
 
 Run:
-  ./Endox-Coind --help  # for a list of command-line options.
+  ./Aequitas-Coind --help  # for a list of command-line options.
 Run
-  ./Endox-Coind -daemon # to start the Endox-Coin daemon.
+  ./Aequitas-Coind -daemon # to start the Aequitas-Coin daemon.
 Run
-  ./Endox-Coind help # When the daemon is running, to get a list of RPC commands
+  ./Aequitas-Coind help # When the daemon is running, to get a list of RPC commands

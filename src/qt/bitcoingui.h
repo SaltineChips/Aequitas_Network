@@ -29,16 +29,16 @@ class QScrollArea;
 QT_END_NAMESPACE
 
 /**
-  EndoxCoin GUI main class. This class represents the main window of the EndoxCoin UI. It communicates with both the client and
+  AequitasCoin GUI main class. This class represents the main window of the AequitasCoin UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
 */
-class EndoxCoinGUI : public QMainWindow
+class AequitasCoinGUI : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit EndoxCoinGUI(QWidget *parent = 0);
-    ~EndoxCoinGUI();
+    explicit AequitasCoinGUI(QWidget *parent = 0);
+    ~AequitasCoinGUI();
 
     /** Set the client model.
         The client model represents the part of the core that communicates with the P2P network, and is wallet-agnostic.
@@ -224,7 +224,7 @@ private slots:
     /** Show progress dialog e.g. for verifychain */
     void showProgress(const QString &title, int nProgress);
 
-    /** Edit the Endox-Coin.conf file */
+    /** Edit the Aequitas-Coin.conf file */
     void editConfig();
     void editConfigExt();
     /** Open the data directory */

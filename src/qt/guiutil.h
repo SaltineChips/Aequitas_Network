@@ -22,7 +22,7 @@ class QUrl;
 class QAbstractItemView;
 QT_END_NAMESPACE
 
-/** Utility functions used by the EndoxCoin Qt UI.
+/** Utility functions used by the AequitasCoin Qt UI.
  */
 namespace GUIUtil
 {
@@ -30,17 +30,17 @@ namespace GUIUtil
     QString dateTimeStr(const QDateTime &datetime);
     QString dateTimeStr(qint64 nTime);
 
-    // Render EndoxCoin addresses in monospace font
+    // Render AequitasCoin addresses in monospace font
     QFont bitcoinAddressFont();
 
     // Set up widgets for address and amounts
     void setupAddressWidget(QLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "Endox-Coin:" URI into recipient object, return true on successful parsing
-    // See EndoxCoin URI definition discussion here: https://bitcointalk.org/index.php?topic=33490.0
-    bool parseEndoxCoinURI(const QUrl &uri, SendCoinsRecipient *out);
-    bool parseEndoxCoinURI(QString uri, SendCoinsRecipient *out);
+    // Parse "Aequitas-Coin:" URI into recipient object, return true on successful parsing
+    // See AequitasCoin URI definition discussion here: https://bitcointalk.org/index.php?topic=33490.0
+    bool parseAequitasCoinURI(const QUrl &uri, SendCoinsRecipient *out);
+    bool parseAequitasCoinURI(QString uri, SendCoinsRecipient *out);
 
     // HTML escaping for rich text controls
     QString HtmlEscape(const QString& str, bool fMultiLine=false);
@@ -176,7 +176,7 @@ namespace GUIUtil
     QString formatTimeOffset(int64_t nTimeOffset);
 
 
-    /** Help message for EndoxCoin-Qt, shown with --help. */
+    /** Help message for AequitasCoin-Qt, shown with --help. */
     class HelpMessageBox : public QMessageBox
     {
         Q_OBJECT

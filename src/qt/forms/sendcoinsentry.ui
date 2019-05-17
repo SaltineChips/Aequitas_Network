@@ -96,7 +96,7 @@
    <item row="8" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="EndoxCoinAmountField" name="payAmount"/>
+      <widget class="AequitasCoinAmountField" name="payAmount"/>
      </item>
      <item>
       <widget class="QToolButton" name="deleteButton">
@@ -149,7 +149,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>EndoxCoinAmountField</class>
+   <class>AequitasCoinAmountField</class>
    <extends>QSpinBox</extends>
    <header>bitcoinamountfield.h</header>
    <container>1</container>

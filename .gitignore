@@ -1,7 +1,7 @@
 src/*.exe
-src/Endox-Coin
-src/Endox-Coind
-src/test_Endox-Coin
+src/Aequitas-Coin
+src/Aequitas-Coind
+src/test_Aequitas-Coin
 src/build.h
 .*.swp
 *.*~*
@@ -10,11 +10,11 @@ src/build.h
 *.orig
 *.o
 *.patch
-.Endox-Coin
+.Aequitas-Coin
 #compilation and Qt preprocessor part
 .qmake.stash
 Makefile
-Endox-Coin-qt
+Aequitas-Coin-qt
 #resources cpp
 qrc_*.cpp
 #qt creator

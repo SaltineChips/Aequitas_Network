@@ -1,14 +1,14 @@
-Endox-Coin-qt: Qt5 GUI for Endox-Coin
+Aequitas-Coin-qt: Qt5 GUI for Aequitas-Coin
 ===============================
 
 Linux
 -------
-https://github.com/Endox-Coindev/Endox-Coin/blob/master/doc/build-unix.md
+https://github.com/Aequitas-Coindev/Aequitas-Coin/blob/master/doc/build-unix.md
 
 Windows
 --------
-https://github.com/Endox-Coindev/Endox-Coin/blob/master/doc/build-msw.md
+https://github.com/Aequitas-Coindev/Aequitas-Coin/blob/master/doc/build-msw.md
 
 Mac OS X
 --------
-https://github.com/Endox-Coindev/Endox-Coin/blob/master/doc/build-osx.md
+https://github.com/Aequitas-Coindev/Aequitas-Coin/blob/master/doc/build-osx.md

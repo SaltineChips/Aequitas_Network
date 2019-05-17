@@ -20,7 +20,7 @@
    <item>
     <widget class="QLabel" name="labelExplanation">
      <property name="text">
-      <string>These are your Endox-Coin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</string>
+      <string>These are your Aequitas-Coin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</string>
      </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>
@@ -90,7 +90,7 @@
      <item>
       <widget class="QPushButton" name="signMessage">
        <property name="toolTip">
-        <string>Sign a message to prove you own a Endox-Coin address</string>
+        <string>Sign a message to prove you own a Aequitas-Coin address</string>
        </property>
        <property name="text">
         <string>Sign &amp;Message</string>
@@ -100,7 +100,7 @@
      <item>
       <widget class="QPushButton" name="verifyMessage">
        <property name="toolTip">
-        <string>Verify a message to ensure it was signed with a specified Endox-Coin address</string>
+        <string>Verify a message to ensure it was signed with a specified Aequitas-Coin address</string>
        </property>
        <property name="text">
         <string>&amp;Verify Message</string>

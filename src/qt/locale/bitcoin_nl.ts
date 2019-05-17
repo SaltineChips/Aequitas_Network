@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Endox-Coin</source>
-        <translation>Over Endox-Coin</translation>
+        <source>About Aequitas-Coin</source>
+        <translation>Over Aequitas-Coin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Endox-Coin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Endox-Coin&lt;/b&gt; versie</translation>
+        <source>&lt;b&gt;Aequitas-Coin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Aequitas-Coin&lt;/b&gt; versie</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The Endox-Coin developers</source>
+Copyright © 2014 The Aequitas-Coin developers</source>
         <translation>Copyright © 2009-2014 De Bitcoin ontwikkelaars
 Copyright © 2012-2014 De NovaCoin ontwikkelaars
-Copyright © 2014 De Endox-Coin ontwikkelaars</translation>
+Copyright © 2014 De Aequitas-Coin ontwikkelaars</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -60,8 +60,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-43"/>
-        <source>These are your Endox-Coin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Dit zijn al jou Endox-Coin adressen om betalingen mee te ontvangen. Je kunt iedere verzender een apart adres geven zodat je kunt volgen wie jou betaald.</translation>
+        <source>These are your Aequitas-Coin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Dit zijn al jou Aequitas-Coin adressen om betalingen mee te ontvangen. Je kunt iedere verzender een apart adres geven zodat je kunt volgen wie jou betaald.</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -75,8 +75,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign a message to prove you own a Endox-Coin address</source>
-        <translation>Teken een bericht om te bewijzen dat je een Endox-Coin adres bezit.</translation>
+        <source>Sign a message to prove you own a Aequitas-Coin address</source>
+        <translation>Teken een bericht om te bewijzen dat je een Aequitas-Coin adres bezit.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -90,8 +90,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-10"/>
-        <source>Verify a message to ensure it was signed with a specified Endox-Coin address</source>
-        <translation>Verifieer een bericht om zeker te zijn dat deze is ondertekend met een specifiek Endox-Coin adres</translation>
+        <source>Verify a message to ensure it was signed with a specified Aequitas-Coin address</source>
+        <translation>Verifieer een bericht om zeker te zijn dat deze is ondertekend met een specifiek Aequitas-Coin adres</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -258,8 +258,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+82"/>
-        <source>Endox-Coin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Endox-Coin zal nu sluiten om het versleutel proces te voltooien. Onthou dat het versleutelen van je portemonnee je niet volledig beschermt tegen diefstal van munten door malware op je computer.</translation>
+        <source>Aequitas-Coin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>Aequitas-Coin zal nu sluiten om het versleutel proces te voltooien. Onthou dat het versleutelen van je portemonnee je niet volledig beschermt tegen diefstal van munten door malware op je computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -304,7 +304,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
-    <name>EndoxCoinGUI</name>
+    <name>AequitasCoinGUI</name>
     <message>
         <location filename="../bitcoingui.cpp" line="+297"/>
         <source>Sign &amp;message...</source>
@@ -352,8 +352,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about Endox-Coin</source>
-        <translation>Toon informatie over Endox-Coin</translation>
+        <source>Show information about Aequitas-Coin</source>
+        <translation>Toon informatie over Aequitas-Coin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -392,13 +392,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-55"/>
-        <source>Send coins to a Endox-Coin address</source>
-        <translation>Verstuur munten naar een Endox-Coin adres</translation>
+        <source>Send coins to a Aequitas-Coin address</source>
+        <translation>Verstuur munten naar een Aequitas-Coin adres</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>Modify configuration options for Endox-Coin</source>
-        <translation>Verander configuratie opties voor Endox-Coin</translation>
+        <source>Modify configuration options for Aequitas-Coin</source>
+        <translation>Verander configuratie opties voor Aequitas-Coin</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -438,8 +438,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-214"/>
         <location line="+551"/>
-        <source>Endox-Coin</source>
-        <translation>Endox-Coin</translation>
+        <source>Aequitas-Coin</source>
+        <translation>Aequitas-Coin</translation>
     </message>
     <message>
         <location line="-551"/>
@@ -448,8 +448,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+193"/>
-        <source>&amp;About Endox-Coin</source>
-        <translation>&amp;Over Endox-Coin</translation>
+        <source>&amp;About Aequitas-Coin</source>
+        <translation>&amp;Over Aequitas-Coin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -500,13 +500,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+58"/>
-        <source>Endox-Coin client</source>
-        <translation>Endox-Coin client</translation>
+        <source>Aequitas-Coin client</source>
+        <translation>Aequitas-Coin client</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to Endox-Coin network</source>
-        <translation><numerusform>%n actieve verbinding naar Endox-Coin netwerk</numerusform><numerusform>%n actieve verbindingen naar Endox-Coin netwerk</numerusform></translation>
+        <source>%n active connection(s) to Aequitas-Coin network</source>
+        <translation><numerusform>%n actieve verbinding naar Aequitas-Coin netwerk</numerusform><numerusform>%n actieve verbindingen naar Aequitas-Coin netwerk</numerusform></translation>
     </message>
     <message>
         <location line="+488"/>
@@ -600,8 +600,8 @@ Adres: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Endox-Coin address or malformed URI parameters.</source>
-        <translation>URI kan niet ontleedt worden! Mogelijke oorzaken zijn een ongeldig Endox-Coin adres of incorrecte URI parameters.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Aequitas-Coin address or malformed URI parameters.</source>
+        <translation>URI kan niet ontleedt worden! Mogelijke oorzaken zijn een ongeldig Aequitas-Coin adres of incorrecte URI parameters.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -723,8 +723,8 @@ Adres: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+104"/>
-        <source>A fatal error occurred. Endox-Coin can no longer continue safely and will quit.</source>
-        <translation>Een fatale fout . Endox-Coin kan niet langer veilig doorgaan en sluit af.</translation>
+        <source>A fatal error occurred. Aequitas-Coin can no longer continue safely and will quit.</source>
+        <translation>Een fatale fout . Aequitas-Coin kan niet langer veilig doorgaan en sluit af.</translation>
     </message>
 </context>
 <context>
@@ -1057,8 +1057,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Endox-Coin address.</source>
-        <translation>Het ingevoerde adres &quot;%1&quot; is geen geldig Endox-Coin adres.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Aequitas-Coin address.</source>
+        <translation>Het ingevoerde adres &quot;%1&quot; is geen geldig Aequitas-Coin adres.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1076,8 +1076,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+426"/>
         <location line="+12"/>
-        <source>Endox-Coin-Qt</source>
-        <translation>Endox-Coin-Qt</translation>
+        <source>Aequitas-Coin-Qt</source>
+        <translation>Aequitas-Coin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1149,13 +1149,13 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Endox-Coin after logging in to the system.</source>
-        <translation>Automatisch starten van Endox-Coin na inloggen van het systeem.</translation>
+        <source>Automatically start Aequitas-Coin after logging in to the system.</source>
+        <translation>Automatisch starten van Aequitas-Coin na inloggen van het systeem.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Endox-Coin on system login</source>
-        <translation>&amp;Start Endox-Coin bij systeem aanmelding</translation>
+        <source>&amp;Start Aequitas-Coin on system login</source>
+        <translation>&amp;Start Aequitas-Coin bij systeem aanmelding</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -1164,8 +1164,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Endox-Coin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>De Endox-Coin client poort automatisch openen op de router. Dit werkt alleen wanneer uw router UPnP ondersteunt en deze is ingeschakeld.</translation>
+        <source>Automatically open the Aequitas-Coin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>De Aequitas-Coin client poort automatisch openen op de router. Dit werkt alleen wanneer uw router UPnP ondersteunt en deze is ingeschakeld.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1174,8 +1174,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Endox-Coin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Verbinding maken met het Endox-Coin netwerk via een SOCKS proxy (bijvoorbeeld als U gebruik maakt van Tor)</translation>
+        <source>Connect to the Aequitas-Coin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Verbinding maken met het Aequitas-Coin netwerk via een SOCKS proxy (bijvoorbeeld als U gebruik maakt van Tor)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1249,8 +1249,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Endox-Coin.</source>
-        <translation>De user interface-taal kan hier ingesteld worden. Deze instelling word toegepast na Endox-Coin opnieuw op te starten.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Aequitas-Coin.</source>
+        <translation>De user interface-taal kan hier ingesteld worden. Deze instelling word toegepast na Aequitas-Coin opnieuw op te starten.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1316,8 +1316,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Endox-Coin.</source>
-        <translation>Deze instelling word toegepast na een restart van Endox-Coin.</translation>
+        <source>This setting will take effect after restarting Aequitas-Coin.</source>
+        <translation>Deze instelling word toegepast na een restart van Aequitas-Coin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1335,8 +1335,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     <message>
         <location line="+46"/>
         <location line="+247"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Endox-Coin network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn, Je portemonnee synchroniseerd automatisch met het Endox-Coin netwerk nadat er verbindig is gemaakt, maar dit proces is nog niet voltooid.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Aequitas-Coin network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan verouderd zijn, Je portemonnee synchroniseerd automatisch met het Aequitas-Coin netwerk nadat er verbindig is gemaakt, maar dit proces is nog niet voltooid.</translation>
     </message>
     <message>
         <location line="-173"/>
@@ -1409,7 +1409,7 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start Endox-Coin: click-to-pay handler</source>
+        <source>Cannot start Aequitas-Coin: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1577,8 +1577,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Endox-Coin-Qt help message to get a list with possible Endox-Coin command-line options.</source>
-        <translation>Laat het Endox-Coin-QT help bericht zien om een lijst te krijgen met mogelijke Endox-Coin command-regel opties.</translation>
+        <source>Show the Aequitas-Coin-Qt help message to get a list with possible Aequitas-Coin command-line options.</source>
+        <translation>Laat het Aequitas-Coin-QT help bericht zien om een lijst te krijgen met mogelijke Aequitas-Coin command-regel opties.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1597,13 +1597,13 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>Endox-Coin - Debug window</source>
-        <translation>Endox-Coin - Debugscherm</translation>
+        <source>Aequitas-Coin - Debug window</source>
+        <translation>Aequitas-Coin - Debugscherm</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Endox-Coin Core</source>
-        <translation>Endox-Coin Kern</translation>
+        <source>Aequitas-Coin Core</source>
+        <translation>Aequitas-Coin Kern</translation>
     </message>
     <message>
         <location line="+256"/>
@@ -1612,8 +1612,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Endox-Coin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open het Endox-Coin debug log bestand van de huidige data map. Dit kan een paar seconden duren voor grote log bestanden.</translation>
+        <source>Open the Aequitas-Coin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open het Aequitas-Coin debug log bestand van de huidige data map. Dit kan een paar seconden duren voor grote log bestanden.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1622,8 +1622,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="+325"/>
-        <source>Welcome to the Endox-Coin RPC console.</source>
-        <translation>Welkom bij de Endox-Coin RPC console.</translation>
+        <source>Welcome to the Aequitas-Coin RPC console.</source>
+        <translation>Welkom bij de Aequitas-Coin RPC console.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1816,8 +1816,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a Endox-Coin address (e.g. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</source>
-        <translation>Voeg een Endox-Coin adres in (bijv. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</translation>
+        <source>Enter a Aequitas-Coin address (e.g. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</source>
+        <translation>Voeg een Aequitas-Coin adres in (bijv. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1916,8 +1916,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+247"/>
-        <source>WARNING: Invalid Endox-Coin address</source>
-        <translation>WAARSCHUWING: Ongeldig Endox-Coin adres</translation>
+        <source>WARNING: Invalid Aequitas-Coin address</source>
+        <translation>WAARSCHUWING: Ongeldig Aequitas-Coin adres</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1990,8 +1990,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Endox-Coin address (e.g. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</source>
-        <translation>Voeg een Endox-Coin adres in (bijv. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</translation>
+        <source>Enter a Aequitas-Coin address (e.g. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</source>
+        <translation>Voeg een Aequitas-Coin adres in (bijv. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</translation>
     </message>
 </context>
 <context>
@@ -2051,8 +2051,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Endox-Coin address</source>
-        <translation>Teken een bericht om te bewijzen dat je een Endox-Coin adres bezit.</translation>
+        <source>Sign the message to prove you own this Aequitas-Coin address</source>
+        <translation>Teken een bericht om te bewijzen dat je een Aequitas-Coin adres bezit.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2083,8 +2083,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Endox-Coin address</source>
-        <translation>Verifieer een bericht om zeker te zijn dat deze is ondertekend met een specifiek Endox-Coin adres</translation>
+        <source>Verify the message to ensure it was signed with the specified Aequitas-Coin address</source>
+        <translation>Verifieer een bericht om zeker te zijn dat deze is ondertekend met een specifiek Aequitas-Coin adres</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2094,8 +2094,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Endox-Coin address (e.g. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</source>
-        <translation>Voeg een Endox-Coin adres in (bijv. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</translation>
+        <source>Enter a Aequitas-Coin address (e.g. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</source>
+        <translation>Voeg een Aequitas-Coin adres in (bijv. ie6sxvFwLpMsp5tRHpAS6q3cZVewmqYzTg)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2104,8 +2104,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Endox-Coin signature</source>
-        <translation>Voer Endox-Coin handtekening in</translation>
+        <source>Enter Aequitas-Coin signature</source>
+        <translation>Voer Aequitas-Coin handtekening in</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2683,8 +2683,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+172"/>
-        <source>Endox-Coin version</source>
-        <translation>Endox-Coin versie</translation>
+        <source>Aequitas-Coin version</source>
+        <translation>Aequitas-Coin versie</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2693,8 +2693,8 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or Endox-Coind</source>
-        <translation>Verstuur commando naar -server of Endox-Coind</translation>
+        <source>Send command to -server or Aequitas-Coind</source>
+        <translation>Verstuur commando naar -server of Aequitas-Coind</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2713,13 +2713,13 @@ Dit betekend dat een fee van %2 is vereist.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: Endox-Coin.conf)</source>
-        <translation>Selecteer configuratie bestand (standaard: Endox-Coin.conf)</translation>
+        <source>Specify configuration file (default: Aequitas-Coin.conf)</source>
+        <translation>Selecteer configuratie bestand (standaard: Aequitas-Coin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: Endox-Coind.pid)</source>
-        <translation>Selecteer pid bestand (standaard: Endox-Coin.conf)</translation>
+        <source>Specify pid file (default: Aequitas-Coind.pid)</source>
+        <translation>Selecteer pid bestand (standaard: Aequitas-Coin.conf)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2736,13 +2736,13 @@ Dit betekend dat een fee van %2 is vereist.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=Endox-Coinrpc
+rpcuser=Aequitas-Coinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Endox-Coin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Aequitas-Coin Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2848,8 +2848,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Endox-Coin Alert&quot; admin@f
     </message>
     <message>
         <location line="-102"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Endox-Coin will not work properly.</source>
-        <translation>Waarschuwing: Controleer of de datum en tijd van de computer juist zijn! Als uw klok verkeerd is Endox-Coin zal niet goed werken.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Aequitas-Coin will not work properly.</source>
+        <translation>Waarschuwing: Controleer of de datum en tijd van de computer juist zijn! Als uw klok verkeerd is Aequitas-Coin zal niet goed werken.</translation>
     </message>
     <message>
         <location line="+131"/>
@@ -2923,8 +2923,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Endox-Coin Alert&quot; admin@f
     </message>
     <message>
         <location line="+40"/>
-        <source>SSL options: (see the EndoxCoin Wiki for SSL setup instructions)</source>
-        <translation>SSL-opties: (zie de EndoxCoin wiki voor SSL-instructies)</translation>
+        <source>SSL options: (see the AequitasCoin Wiki for SSL setup instructions)</source>
+        <translation>SSL-opties: (zie de AequitasCoin wiki voor SSL-instructies)</translation>
     </message>
     <message>
         <location line="-80"/>
@@ -3150,7 +3150,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Endox-Coin Alert&quot; admin@f
     </message>
     <message>
         <location line="+10"/>
-        <source>Initialization sanity check failed. Endox-Coin is shutting down.</source>
+        <source>Initialization sanity check failed. Aequitas-Coin is shutting down.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3215,13 +3215,13 @@ for example: alertnotify=echo %%s | mail -s &quot;Endox-Coin Alert&quot; admin@f
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Endox-Coin</source>
-        <translation>Fout bij laden van wallet.dat: Portemonnee vereist een nieuwere versie van Endox-Coin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Aequitas-Coin</source>
+        <translation>Fout bij laden van wallet.dat: Portemonnee vereist een nieuwere versie van Aequitas-Coin</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Endox-Coin to complete</source>
-        <translation>Portemonnee moet herschreven worden: herstart Endox-Coin om te voltooien</translation>
+        <source>Wallet needed to be rewritten: restart Aequitas-Coin to complete</source>
+        <translation>Portemonnee moet herschreven worden: herstart Aequitas-Coin om te voltooien</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3285,8 +3285,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Endox-Coin Alert&quot; admin@f
     </message>
     <message>
         <location line="+124"/>
-        <source>Unable to bind to %s on this computer. Endox-Coin is probably already running.</source>
-        <translation>Niet mogelijk om %s op deze computer. Endox-Coin is waarschijnlijk al geopened.</translation>
+        <source>Unable to bind to %s on this computer. Aequitas-Coin is probably already running.</source>
+        <translation>Niet mogelijk om %s op deze computer. Aequitas-Coin is waarschijnlijk al geopened.</translation>
     </message>
     <message>
         <location line="-100"/>
@@ -3325,7 +3325,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Endox-Coin Alert&quot; admin@f
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. Endox-Coin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. Aequitas-Coin is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>

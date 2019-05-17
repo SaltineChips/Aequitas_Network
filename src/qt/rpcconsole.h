@@ -19,7 +19,7 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local EndoxCoin RPC console. */
+/** Local AequitasCoin RPC console. */
 class RPCConsole: public QWidget
 {
     Q_OBJECT

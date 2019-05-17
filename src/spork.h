@@ -1,4 +1,4 @@
-// Copyright (c) 2015 The Endox-Coin developers
+// Copyright (c) 2015 The Aequitas-Coin developers
 // Copyright (c) 2009-2012 The Darkcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -37,7 +37,7 @@ using namespace boost;
 #define SPORK_2_INSTANTX_DEFAULT                              0            // ON
 #define SPORK_3_INSTANTX_BLOCK_FILTERING_DEFAULT              0            // ON
 #define SPORK_4_RECONVERGE_DEFAULT                            0            // ON - BUT NOT USED
-#define SPORK_5_MAX_VALUE_DEFAULT                             3000000      // 3,000,000 EDX
+#define SPORK_5_MAX_VALUE_DEFAULT                             3000000      // 3,000,000 AEQL
 #define SPORK_6_REPLAY_BLOCKS_DEFAULT                         0            // ON - BUT NOT USED
 #define SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT        4070908800   // OFF
 #define SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT_DEFAULT         4070908800   // OFF

@@ -325,11 +325,11 @@ void TransactionView::changedAmount(const QString &amount)
         return;
     CAmount amount_parsed = 0;
 
-    // Replace "," by "." so EndoxCoinUnits::parse will not fail for users entering "," as decimal separator
+    // Replace "," by "." so AequitasCoinUnits::parse will not fail for users entering "," as decimal separator
     QString newAmount = amount;
     newAmount.replace(QString(","), QString("."));
 
-    if(EndoxCoinUnits::parse(model->getOptionsModel()->getDisplayUnit(), newAmount, &amount_parsed))
+    if(AequitasCoinUnits::parse(model->getOptionsModel()->getDisplayUnit(), newAmount, &amount_parsed))
     {
         transactionProxyModel->setMinAmount(amount_parsed);
     }
@@ -360,7 +360,7 @@ void TransactionView::exportClicked()
     writer.addColumn(tr("Type"), TransactionTableModel::Type, Qt::EditRole);
     writer.addColumn(tr("Label"), 0, TransactionTableModel::LabelRole);
     writer.addColumn(tr("Address"), 0, TransactionTableModel::AddressRole);
-    writer.addColumn(EndoxCoinUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
+    writer.addColumn(AequitasCoinUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
     writer.addColumn(tr("ID"), 0, TransactionTableModel::TxIDRole);
 
     if(!writer.write()) {
@@ -472,7 +472,7 @@ void TransactionView::computeSum()
     foreach (QModelIndex index, selection){
         amount += index.data(TransactionTableModel::AmountRole).toLongLong();
     }
-    QString strAmount(EndoxCoinUnits::formatWithUnit(nDisplayUnit, amount, true, EndoxCoinUnits::separatorAlways));
+    QString strAmount(AequitasCoinUnits::formatWithUnit(nDisplayUnit, amount, true, AequitasCoinUnits::separatorAlways));
     if (amount < 0) strAmount = "<span style='color:red;'>" + strAmount + "</span>";
     emit trxAmount(strAmount);
 }

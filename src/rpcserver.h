@@ -50,7 +50,7 @@ public:
 };
 
 /**
- * EndoxCoin RPC command dispatcher.
+ * AequitasCoin RPC command dispatcher.
  */
 class CRPCTable
 {

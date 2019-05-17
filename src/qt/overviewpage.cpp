@@ -25,7 +25,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate(): QAbstractItemDelegate(), unit(EndoxCoinUnits::EDX)
+    TxViewDelegate(): QAbstractItemDelegate(), unit(AequitasCoinUnits::AEQL)
     {
 
     }
@@ -81,7 +81,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(fUseDarkTheme ? QColor(255, 255, 255) : foreground);
-        QString amountText = EndoxCoinUnits::formatWithUnit(unit, amount, true);
+        QString amountText = AequitasCoinUnits::formatWithUnit(unit, amount, true);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -172,16 +172,16 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& stake, cons
     currentWatchOnlyStake = watchOnlyStake;
     currentWatchUnconfBalance = watchUnconfBalance;
     currentWatchImmatureBalance = watchImmatureBalance;
-    ui->labelBalance->setText(EndoxCoinUnits::formatWithUnit(nDisplayUnit, balance));
-    ui->labelStake->setText(EndoxCoinUnits::formatWithUnit(nDisplayUnit, stake));
-    ui->labelUnconfirmed->setText(EndoxCoinUnits::formatWithUnit(nDisplayUnit, unconfirmedBalance));
-    ui->labelImmature->setText(EndoxCoinUnits::formatWithUnit(nDisplayUnit, immatureBalance));
-    ui->labelTotal->setText(EndoxCoinUnits::formatWithUnit(nDisplayUnit, balance + stake + unconfirmedBalance + immatureBalance));
-    ui->labelWatchAvailable->setText(EndoxCoinUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance));
-    ui->labelWatchStake->setText(EndoxCoinUnits::floorWithUnit(nDisplayUnit, watchOnlyStake));
-    ui->labelWatchPending->setText(EndoxCoinUnits::floorWithUnit(nDisplayUnit, watchUnconfBalance));
-    ui->labelWatchImmature->setText(EndoxCoinUnits::floorWithUnit(nDisplayUnit, watchImmatureBalance));
-    ui->labelWatchTotal->setText(EndoxCoinUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance + watchOnlyStake + watchUnconfBalance + watchImmatureBalance));
+    ui->labelBalance->setText(AequitasCoinUnits::formatWithUnit(nDisplayUnit, balance));
+    ui->labelStake->setText(AequitasCoinUnits::formatWithUnit(nDisplayUnit, stake));
+    ui->labelUnconfirmed->setText(AequitasCoinUnits::formatWithUnit(nDisplayUnit, unconfirmedBalance));
+    ui->labelImmature->setText(AequitasCoinUnits::formatWithUnit(nDisplayUnit, immatureBalance));
+    ui->labelTotal->setText(AequitasCoinUnits::formatWithUnit(nDisplayUnit, balance + stake + unconfirmedBalance + immatureBalance));
+    ui->labelWatchAvailable->setText(AequitasCoinUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance));
+    ui->labelWatchStake->setText(AequitasCoinUnits::floorWithUnit(nDisplayUnit, watchOnlyStake));
+    ui->labelWatchPending->setText(AequitasCoinUnits::floorWithUnit(nDisplayUnit, watchUnconfBalance));
+    ui->labelWatchImmature->setText(AequitasCoinUnits::floorWithUnit(nDisplayUnit, watchImmatureBalance));
+    ui->labelWatchTotal->setText(AequitasCoinUnits::floorWithUnit(nDisplayUnit, watchOnlyBalance + watchOnlyStake + watchUnconfBalance + watchImmatureBalance));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users
@@ -263,7 +263,7 @@ void OverviewPage::setWalletModel(WalletModel *model)
         connect(model, SIGNAL(notifyWatchonlyChanged(bool)), this, SLOT(updateWatchOnlyLabels(bool)));
     }
 
-    // update the display unit, to not use the default ("EDX")
+    // update the display unit, to not use the default ("AEQL")
     updateDisplayUnit();
 }
 

@@ -7,7 +7,7 @@ cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP
 software written by Thomas Bernard.
 
 
-See readme-qt.rst for instructions on building Endox-Coin QT, the
+See readme-qt.rst for instructions on building Aequitas-Coin QT, the
 graphical user interface.
 
 WINDOWS BUILD NOTES
@@ -47,7 +47,7 @@ Secp256k1
 
 OpenSSL
 -------
-MSYS Endox-Coin:
+MSYS Aequitas-Coin:
 un-tar sources with MSYS 'tar xfz' to avoid issue with symlinks (OpenSSL ticket 2377)
 change 'MAKE' env. variable from 'C:\MinGW32\bin\mingw32-make.exe' to '/c/MinGW32/bin/mingw32-make.exe'
 
@@ -57,7 +57,7 @@ make
 
 Berkeley DB
 -----------
-MSYS Endox-Coin:
+MSYS Aequitas-Coin:
 
     cd /c/dev/coindeps32/db-4.8.30.NC-mgw/build_unix
     sh ../dist/configure --enable-mingw --enable-cxx
@@ -73,7 +73,7 @@ DOS prompt:
 
 Secp256k1
 -----------
-MSYS Endox-Coin:
+MSYS Aequitas-Coin:
 
     ./autogen.sh
     ./configure --enable-module-recovery --prefix /c/dev/coindeps32/Secp256k1
@@ -84,17 +84,17 @@ MiniUPnPc
 ---------
 UPnP support is optional, make with USE_UPNP= to disable it.
 
-MSYS Endox-Coin:
+MSYS Aequitas-Coin:
 
     cd /c/miniupnpc-1.6-mgw
     make -f Makefile.mingw
     mkdir miniupnpc
     cp *.h miniupnpc/
 
-Build Endox-Coind
+Build Aequitas-Coind
 -------
 DOS prompt:
 
-    cd \Endox-Coin\src
+    cd \Aequitas-Coin\src
     mingw32-make -f makefile.mingw
-    strip Endox-Coind.exe
+    strip Aequitas-Coind.exe

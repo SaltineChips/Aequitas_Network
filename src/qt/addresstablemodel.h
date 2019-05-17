@@ -21,13 +21,13 @@ public:
 
     enum AddressType {
         AT_Unknown = 0, /**< User specified label */
-        AT_Normal = 1,  /**< EndoxCoin address */
+        AT_Normal = 1,  /**< AequitasCoin address */
         AT_Stealth = 2  /**< Stealth address */
     };
 
     enum ColumnIndex {
         Label = 0,   /**< User specified label */
-        Address = 1,  /**< EndoxCoin address */
+        Address = 1,  /**< AequitasCoin address */
 	Type = 2 /**< Address type */
     };
 

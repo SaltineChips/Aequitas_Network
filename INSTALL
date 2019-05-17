@@ -1,9 +1,9 @@
-Building Endox-Coin
+Building Aequitas-Coin
 
-See doc/readme-qt.rst for instructions on building Endox-Coin QT,
+See doc/readme-qt.rst for instructions on building Aequitas-Coin QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Endox-Coin.
+implementation of Aequitas-Coin.
 
-See doc/build-*.txt for instructions on building Endox-Coind,
+See doc/build-*.txt for instructions on building Aequitas-Coind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Endox-Coin.
+implementation of Aequitas-Coin.

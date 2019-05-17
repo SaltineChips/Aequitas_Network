@@ -1,11 +1,11 @@
 --- 
-name: Endox-Coin
+name: Aequitas-Coin
 urls:
-- http://Endox-Coin.org/Endox-Coin-latest-win32-gitian.zip
+- http://Aequitas-Coin.org/Aequitas-Coin-latest-win32-gitian.zip
 rss:
 - url: http://sourceforge.net/api/file/index/project-id/244765/mtime/desc/limit/100/rss
   xpath: //item/link/text()
-  pattern: Endox-Coin-\d+.\d+.\d+-win32-gitian.zip
+  pattern: Aequitas-Coin-\d+.\d+.\d+-win32-gitian.zip
 signers:
   0A82509767C7D4A5D14DA2301AE1D35043E08E54:
     weight: 40

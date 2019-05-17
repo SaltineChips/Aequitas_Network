@@ -11,7 +11,7 @@ QT_END_NAMESPACE
 
 /** Widget for entering bitcoin amounts.
   */
-class EndoxCoinAmountField: public QWidget
+class AequitasCoinAmountField: public QWidget
 {
     Q_OBJECT
 
@@ -20,7 +20,7 @@ class EndoxCoinAmountField: public QWidget
     Q_PROPERTY(qint64 value READ value WRITE setValue NOTIFY textChanged USER true)
 
 public:
-    explicit EndoxCoinAmountField(QWidget *parent = 0);
+    explicit AequitasCoinAmountField(QWidget *parent = 0);
 
     CAmount value(bool *valid=0) const;
     void setValue(const CAmount& value);

@@ -9,90 +9,90 @@
 #include <QSettings>
 #include <QStringList>
 
-EndoxCoinUnits::EndoxCoinUnits(QObject *parent):
+AequitasCoinUnits::AequitasCoinUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<EndoxCoinUnits::Unit> EndoxCoinUnits::availableUnits()
+QList<AequitasCoinUnits::Unit> AequitasCoinUnits::availableUnits()
 {
-    QList<EndoxCoinUnits::Unit> unitlist;
-    unitlist.append(EDX);
-    unitlist.append(mEDX);
-    unitlist.append(uEDX);
+    QList<AequitasCoinUnits::Unit> unitlist;
+    unitlist.append(AEQL);
+    unitlist.append(mAEQL);
+    unitlist.append(uAEQL);
     return unitlist;
 }
 
-bool EndoxCoinUnits::valid(int unit)
+bool AequitasCoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case EDX:
-    case mEDX:
-    case uEDX:
+    case AEQL:
+    case mAEQL:
+    case uAEQL:
         return true;
     default:
         return false;
     }
 }
 
-QString EndoxCoinUnits::name(int unit)
+QString AequitasCoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case EDX: return QString("EDX");
-    case mEDX: return QString("mEDX");
-    case uEDX: return QString::fromUtf8("μEDX");
+    case AEQL: return QString("AEQL");
+    case mAEQL: return QString("mAEQL");
+    case uAEQL: return QString::fromUtf8("μAEQL");
     default: return QString("???");
     }
 }
 
-QString EndoxCoinUnits::description(int unit)
+QString AequitasCoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case EDX: return QString("Endox-Coins");
-    case mEDX: return QString("Milli-Endox-Coins (1 / 1,000)");
-    case uEDX: return QString("Micro-Endox-Coins (1 / 1,000,000)");
+    case AEQL: return QString("Aequitas-Coins");
+    case mAEQL: return QString("Milli-Aequitas-Coins (1 / 1,000)");
+    case uAEQL: return QString("Micro-Aequitas-Coins (1 / 1,000,000)");
     default: return QString("???");
     }
 }
 
-qint64 EndoxCoinUnits::factor(int unit)
+qint64 AequitasCoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case EDX:  return 100000000;
-    case mEDX: return 100000;
-    case uEDX: return 100;
+    case AEQL:  return 100000000;
+    case mAEQL: return 100000;
+    case uAEQL: return 100;
     default:   return 100000000;
     }
 }
 
-int EndoxCoinUnits::amountDigits(int unit)
+int AequitasCoinUnits::amountDigits(int unit)
 {
     switch(unit)
     {
-    case EDX: return 8; // 21,000,000 (# digits, without commas)
-    case mEDX: return 11; // 21,000,000,000
-    case uEDX: return 14; // 21,000,000,000,000
+    case AEQL: return 8; // 21,000,000 (# digits, without commas)
+    case mAEQL: return 11; // 21,000,000,000
+    case uAEQL: return 14; // 21,000,000,000,000
     default: return 0;
     }
 }
 
-int EndoxCoinUnits::decimals(int unit)
+int AequitasCoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case EDX: return 8;
-    case mEDX: return 5;
-    case uEDX: return 2;
+    case AEQL: return 8;
+    case mAEQL: return 5;
+    case uAEQL: return 2;
     default: return 0;
     }
 }
 
-QString EndoxCoinUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
+QString AequitasCoinUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -120,7 +120,7 @@ QString EndoxCoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separat
     return quotient_str + QString(".") + remainder_str;
 }
 
-// TODO: Review all remaining calls to EndoxCoinUnits::formatWithUnit to
+// TODO: Review all remaining calls to AequitasCoinUnits::formatWithUnit to
 // TODO: determine whether the output is used in a plain text context
 // TODO: or an HTML context (and replace with
 // TODO: BtcoinUnits::formatHtmlWithUnit in the latter case). Hopefully
@@ -135,19 +135,19 @@ QString EndoxCoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separat
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString EndoxCoinUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString AequitasCoinUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + name(unit);
 }
 
-QString EndoxCoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString AequitasCoinUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-QString EndoxCoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString AequitasCoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QSettings settings;
     int digits = settings.value("digits").toInt();
@@ -158,14 +158,14 @@ QString EndoxCoinUnits::floorWithUnit(int unit, const CAmount& amount, bool plus
     return result + QString(" ") + name(unit);
 }
 
-QString EndoxCoinUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString AequitasCoinUnits::floorHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(floorWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
     return QString("<span style='white-space: nowrap;'>%1</span>").arg(str);
 }
 
-bool EndoxCoinUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool AequitasCoinUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -204,23 +204,23 @@ bool EndoxCoinUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-QString EndoxCoinUnits::getAmountColumnTitle(int unit)
+QString AequitasCoinUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (EndoxCoinUnits::valid(unit))
+    if (AequitasCoinUnits::valid(unit))
     {
-        amountTitle += " ("+EndoxCoinUnits::name(unit) + ")";
+        amountTitle += " ("+AequitasCoinUnits::name(unit) + ")";
     }
     return amountTitle;
 }
 
-int EndoxCoinUnits::rowCount(const QModelIndex &parent) const
+int AequitasCoinUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant EndoxCoinUnits::data(const QModelIndex &index, int role) const
+QVariant AequitasCoinUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -240,7 +240,7 @@ QVariant EndoxCoinUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount EndoxCoinUnits::maxMoney()
+CAmount AequitasCoinUnits::maxMoney()
 {
     return MAX_SINGLE_TX;
 }

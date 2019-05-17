@@ -15,7 +15,7 @@ class QDateTime;
 class QTimer;
 QT_END_NAMESPACE
 
-/** Model for EndoxCoin network client. */
+/** Model for AequitasCoin network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT
@@ -53,7 +53,7 @@ public:
     QString clientName() const;
     QString formatClientStartupTime() const;
 
-    //! Get and set the content of the Endox-Coin.conf file
+    //! Get and set the content of the Aequitas-Coin.conf file
     QString getConfigFileContent() const;
     void setConfigFileContent(const QString &content);
 

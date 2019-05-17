@@ -156,7 +156,7 @@ bool CWallet::LoadCScript(const CScript& redeemScript)
      * these. Do not add them to the wallet and warn. */
     if (redeemScript.size() > MAX_SCRIPT_ELEMENT_SIZE)
     {
-        std::string strAddr = CEndoxCoinAddress(redeemScript.GetID()).ToString();
+        std::string strAddr = CAequitasCoinAddress(redeemScript.GetID()).ToString();
         LogPrintf("%s: Warning: This wallet contains a redeemScript of size %u which exceeds maximum size %i thus can never be redeemed. Do not use address %s.\n",
             __func__, redeemScript.size(), MAX_SCRIPT_ELEMENT_SIZE, strAddr);
         return true;
@@ -1146,7 +1146,7 @@ void CWallet::ReacceptWalletTransactions()
                 }
                 if (fUpdated)
                 {
-                    LogPrintf("ReacceptWalletTransactions found spent coin %s EDX %s\n", FormatMoney(wtx.GetCredit(ISMINE_ALL)), wtx.GetHash().ToString());
+                    LogPrintf("ReacceptWalletTransactions found spent coin %s AEQL %s\n", FormatMoney(wtx.GetCredit(ISMINE_ALL)), wtx.GetHash().ToString());
                     wtx.MarkDirty();
                     wtx.WriteToDisk();
                 }
@@ -2015,7 +2015,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, 
                     } else if (coin_type == ONLY_NOT10000IFMN) {
                         strFailReason = _(" Unable to locate enough MNengine non-denominated funds for this transaction.");
                     } else if (coin_type == ONLY_NONDENOMINATED_NOT10000IFMN ) {
-                        strFailReason = _(" Unable to locate enough MNengine non-denominated funds for this transaction that are not equal 1000 EDX.");
+                        strFailReason = _(" Unable to locate enough MNengine non-denominated funds for this transaction that are not equal 1000 AEQL.");
                     }
 
                     if(useIX){
@@ -2042,7 +2042,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, 
                 {
                     // Fill a vout to ourself
                     // TODO: pass in scriptChange instead of reservekey so
-                    // change transaction isn't always pay-to-Endox-Coin-address
+                    // change transaction isn't always pay-to-Aequitas-Coin-address
                     CScript scriptChange;
 
                     // coin control: send change to custom address
@@ -2321,7 +2321,7 @@ bool CWallet::UnlockStealthAddresses(const CKeyingMaterial& vMasterKeyIn)
             continue;
 
         CKeyID ckid = pubKey.GetID();
-        CEndoxCoinAddress addr(ckid);
+        CAequitasCoinAddress addr(ckid);
 
         StealthKeyMetaMap::iterator mi = mapStealthKeyMeta.find(ckid);
         if (mi == mapStealthKeyMeta.end())
@@ -2409,7 +2409,7 @@ bool CWallet::UnlockStealthAddresses(const CKeyingMaterial& vMasterKeyIn)
         if (fDebug)
         {
             CKeyID keyID = cpkT.GetID();
-            CEndoxCoinAddress coinAddress(keyID);
+            CAequitasCoinAddress coinAddress(keyID);
             printf("Adding secret to key %s.\n", coinAddress.ToString().c_str());
         };
 
@@ -2609,7 +2609,7 @@ bool CWallet::SendStealthMoneyToDestination(CStealthAddress& sxAddress, int64_t 
 
     CKeyID ckidTo = cpkTo.GetID();
 
-    CEndoxCoinAddress addrTo(ckidTo);
+    CAequitasCoinAddress addrTo(ckidTo);
 
     if (SecretToPublicKey(ephem_secret, ephem_pubkey) != 0)
     {
@@ -2626,7 +2626,7 @@ bool CWallet::SendStealthMoneyToDestination(CStealthAddress& sxAddress, int64_t 
 
     std::vector<unsigned char> vchNarr;
 
-    // -- Parse EndoxCoin address
+    // -- Parse AequitasCoin address
     CScript scriptPubKey;
     scriptPubKey.SetDestination(addrTo.Get());
 
@@ -2758,7 +2758,7 @@ bool CWallet::FindStealthTransactions(const CTransaction& tx, mapValue_t& mapNar
                     std::vector<uint8_t> vchEmpty;
                     AddCryptedKey(cpkE, vchEmpty);
                     CKeyID keyId = cpkE.GetID();
-                    CEndoxCoinAddress coinAddress(keyId);
+                    CAequitasCoinAddress coinAddress(keyId);
                     std::string sLabel = it->Encoded();
                     SetAddressBookName(keyId, sLabel);
 
@@ -2821,7 +2821,7 @@ bool CWallet::FindStealthTransactions(const CTransaction& tx, mapValue_t& mapNar
                     CKeyID keyID = cpkT.GetID();
                     if (fDebug)
                     {
-                        CEndoxCoinAddress coinAddress(keyID);
+                        CAequitasCoinAddress coinAddress(keyID);
                         printf("Adding key %s.\n", coinAddress.ToString().c_str());
                     };
 
@@ -3093,7 +3093,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 
         CTxDestination address1;
         ExtractDestination(payee, address1);
-        CEndoxCoinAddress address2(address1);
+        CAequitasCoinAddress address2(address1);
 
         LogPrintf("Masternode payment to %s\n", address2.ToString().c_str());
     }
@@ -3129,7 +3129,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         // define address
         CBitcoinAddress devopaddress;
         if (Params().NetworkID() == CChainParams::MAIN)
-            devopaddress = CBitcoinAddress("Dtz6UgAxwavsnxnb7jeSRj5cgERLvV8KBy"); // TODO: nothing, already set to a valid Endox address
+            devopaddress = CBitcoinAddress("Dtz6UgAxwavsnxnb7jeSRj5cgERLvV8KBy"); // TODO: nothing, already set to a valid Aequitas address
       //  else if (Params().NetworkIDString() == CBaseChainParams::TESTNET)
       //      address = CBitcoinAddress(" ");
       //  else if (Params().NetworkIDString() == CBaseChainParams::REGTEST)
@@ -3165,7 +3165,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 
         CTxDestination address1;
         ExtractDestination(devpayee, address1);
-        CEndoxCoinAddress address2(address1);
+        CAequitasCoinAddress address2(address1);
 
         LogPrintf("DevOps payment to %s\n", address2.ToString().c_str());
     }
@@ -3374,7 +3374,7 @@ string CWallet::SendMoneyToDestination(const CTxDestination& address, int64_t nV
     if (nValue + nTransactionFee > GetBalance())
         return _("Insufficient funds");
 
-    // Parse EndoxCoin address
+    // Parse AequitasCoin address
     CScript scriptPubKey;
     scriptPubKey.SetDestination(address);
 
@@ -3437,7 +3437,7 @@ bool CWallet::SetAddressBookName(const CTxDestination& address, const string& st
                              (fUpdated ? CT_UPDATED : CT_NEW) );
     if (!fFileBacked)
         return false;
-    return CWalletDB(strWalletFile).WriteName(CEndoxCoinAddress(address).ToString(), strName);
+    return CWalletDB(strWalletFile).WriteName(CAequitasCoinAddress(address).ToString(), strName);
 }
 
 bool CWallet::DelAddressBookName(const CTxDestination& address)
@@ -3452,8 +3452,8 @@ bool CWallet::DelAddressBookName(const CTxDestination& address)
 
     if (!fFileBacked)
         return false;
-    CWalletDB(strWalletFile).EraseName(CEndoxCoinAddress(address).ToString());
-    return CWalletDB(strWalletFile).EraseName(CEndoxCoinAddress(address).ToString());
+    CWalletDB(strWalletFile).EraseName(CAequitasCoinAddress(address).ToString());
+    return CWalletDB(strWalletFile).EraseName(CAequitasCoinAddress(address).ToString());
 }
 
 bool CWallet::GetTransaction(const uint256 &hashTx, CWalletTx& wtx)
@@ -3808,7 +3808,7 @@ void CWallet::FixSpentCoins(int& nMismatchFound, int64_t& nBalanceInQuestion, bo
         {
             if (IsMine(pcoin->vout[n]) && pcoin->IsSpent(n) && (txindex.vSpent.size() <= n || txindex.vSpent[n].IsNull()))
             {
-                LogPrintf("FixSpentCoins found lost coin %s EDX %s[%d], %s\n",
+                LogPrintf("FixSpentCoins found lost coin %s AEQL %s[%d], %s\n",
                     FormatMoney(pcoin->vout[n].nValue), pcoin->GetHash().ToString(), n, fCheckOnly? "repair not attempted" : "repairing");
                 nMismatchFound++;
                 nBalanceInQuestion += pcoin->vout[n].nValue;
@@ -3820,7 +3820,7 @@ void CWallet::FixSpentCoins(int& nMismatchFound, int64_t& nBalanceInQuestion, bo
             }
             else if (IsMine(pcoin->vout[n]) && !pcoin->IsSpent(n) && (txindex.vSpent.size() > n && !txindex.vSpent[n].IsNull()))
             {
-                LogPrintf("FixSpentCoins found spent coin %s EDX %s[%d], %s\n",
+                LogPrintf("FixSpentCoins found spent coin %s AEQL %s[%d], %s\n",
                     FormatMoney(pcoin->vout[n].nValue), pcoin->GetHash().ToString(), n, fCheckOnly? "repair not attempted" : "repairing");
                 nMismatchFound++;
                 nBalanceInQuestion += pcoin->vout[n].nValue;
@@ -4015,7 +4015,7 @@ void CWallet::GetKeyBirthTimes(std::map<CKeyID, int64_t> &mapKeyBirth) const {
         mapKeyBirth[it->first] = it->second->nTime - 7200; // block times can be 2h off
 }
 
-bool CWallet::ImportPrivateKey(CEndoxCoinSecret vchSecret, string strLabel, bool fRescan) {
+bool CWallet::ImportPrivateKey(CAequitasCoinSecret vchSecret, string strLabel, bool fRescan) {
     if (fWalletUnlockStakingOnly)
         return false;
 

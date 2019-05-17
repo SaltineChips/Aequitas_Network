@@ -14,7 +14,7 @@ daemon:linux:
     
   artifacts:
     paths:
-    - src/Endox-Coind
+    - src/Aequitas-Coind
 
     
 qt:linux:
@@ -25,4 +25,4 @@ qt:linux:
     
   artifacts:
     paths:
-    - Endox-Coin-qt
+    - Aequitas-Coin-qt

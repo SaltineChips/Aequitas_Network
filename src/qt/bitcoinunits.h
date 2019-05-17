@@ -37,24 +37,24 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** EndoxCoin unit definitions. Encapsulates parsing and formatting
+/** AequitasCoin unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class EndoxCoinUnits: public QAbstractListModel
+class AequitasCoinUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit EndoxCoinUnits(QObject *parent);
+    explicit AequitasCoinUnits(QObject *parent);
 
-    /** EndoxCoin units.
+    /** AequitasCoin units.
       @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
     {
-        EDX,
-        mEDX,
-        uEDX
+        AEQL,
+        mAEQL,
+        uAEQL
     };
 
     enum SeparatorStyle
@@ -121,8 +121,8 @@ public:
     static CAmount maxMoney();
 
 private:
-    QList<EndoxCoinUnits::Unit> unitlist;
+    QList<AequitasCoinUnits::Unit> unitlist;
 };
-typedef EndoxCoinUnits::Unit EndoxCoinUnit;
+typedef AequitasCoinUnits::Unit AequitasCoinUnit;
 
 #endif // BITCOINUNITS_H

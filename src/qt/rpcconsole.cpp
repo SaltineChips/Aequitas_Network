@@ -69,7 +69,7 @@ void RPCExecutor::start()
 }
 
 /**
- * Split Endox-Coin command line into a list of arguments. Aims to emulate \c bash and friends.
+ * Split Aequitas-Coin command line into a list of arguments. Aims to emulate \c bash and friends.
  *
  * - Arguments are delimited with whitespace
  * - Extra whitespace at the beginning and end and between arguments will be ignored
@@ -437,7 +437,7 @@ void RPCConsole::clear()
                 "b { color: #545454; } "
                 );
 
-    message(CMD_REPLY, (tr("Welcome to the Endox-Coin RPC console.") + "<br>" +
+    message(CMD_REPLY, (tr("Welcome to the Aequitas-Coin RPC console.") + "<br>" +
                         tr("Use up and down arrows to navigate history, and <b>Ctrl-L</b> to clear screen.") + "<br>" +
                         tr("Type <b>help</b> for an overview of available commands.")), true);
 }

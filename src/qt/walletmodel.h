@@ -86,7 +86,7 @@ public:
     }
 };
 
-/** Interface to EndoxCoin wallet from Qt view code. */
+/** Interface to AequitasCoin wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT

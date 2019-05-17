@@ -210,7 +210,7 @@ bool WalletModel::validateAddress(const QString &address)
             return true;
     };
 
-    CEndoxCoinAddress addressParsed(sAddr);
+    CAequitasCoinAddress addressParsed(sAddr);
     return addressParsed.IsValid();
 }
 
@@ -242,7 +242,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         setAddress.insert(rcp.address);
         ++nAddresses;
 
-        CScript scriptPubKey = GetScriptForDestination(CEndoxCoinAddress(rcp.address.toStdString()).Get());
+        CScript scriptPubKey = GetScriptForDestination(CAequitasCoinAddress(rcp.address.toStdString()).Get());
         vecSend.push_back(std::pair<CScript, CAmount>(scriptPubKey, rcp.amount));
 
         total += rcp.amount;
@@ -356,7 +356,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
 
                     CKeyID ckidTo = cpkTo.GetID();
 
-                    CEndoxCoinAddress addrTo(ckidTo);
+                    CAequitasCoinAddress addrTo(ckidTo);
 
                     if (SecretToPublicKey(ephem_secret, ephem_pubkey) != 0)
                     {
@@ -388,7 +388,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
             }
 
             CScript scriptPubKey;
-            scriptPubKey.SetDestination(CEndoxCoinAddress(sAddr).Get());
+            scriptPubKey.SetDestination(CAequitasCoinAddress(sAddr).Get());
             vecSend.push_back(make_pair(scriptPubKey, rcp.amount));
         }
 
@@ -428,7 +428,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
     foreach(const SendCoinsRecipient &rcp, recipients)
     {
         std::string strAddress = rcp.address.toStdString();
-        CTxDestination dest = CEndoxCoinAddress(strAddress).Get();
+        CTxDestination dest = CAequitasCoinAddress(strAddress).Get();
         std::string strLabel = rcp.label.toStdString();
         {
             LOCK(wallet->cs_wallet);
@@ -555,7 +555,7 @@ static void NotifyAddressBookChanged(WalletModel *walletmodel, CWallet *wallet,
                                   Q_ARG(int, status));
     } else
     {
-    QString strAddress = QString::fromStdString(CEndoxCoinAddress(address).ToString());
+    QString strAddress = QString::fromStdString(CAequitasCoinAddress(address).ToString());
     QString strLabel = QString::fromStdString(label);
 
     qDebug() << "NotifyAddressBookChanged : " + strAddress + " " + strLabel + " isMine=" + QString::number(isMine) + " status=" + QString::number(status);
@@ -679,7 +679,7 @@ WalletModel::UnlockContext::~UnlockContext()
 
 void WalletModel::UnlockContext::CopyFrom(const UnlockContext& rhs)
 {
-    // Endox-Coin context; old object no longer relocks wallet
+    // Aequitas-Coin context; old object no longer relocks wallet
     *this = rhs;
     rhs.relock = false;
 }
@@ -738,7 +738,7 @@ void WalletModel::listCoins(std::map<QString, std::vector<COutput> >& mapCoins) 
         CTxDestination address;
         if(!out.fSpendable || !ExtractDestination(cout.tx->vout[cout.i].scriptPubKey, address))
             continue;
-        mapCoins[QString::fromStdString(CEndoxCoinAddress(address).ToString())].push_back(out);
+        mapCoins[QString::fromStdString(CAequitasCoinAddress(address).ToString())].push_back(out);
     }
 }
 

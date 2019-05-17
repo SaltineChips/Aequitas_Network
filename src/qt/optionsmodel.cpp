@@ -53,7 +53,7 @@ void OptionsModel::Init()
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", EndoxCoinUnits::EDX);
+        settings.setValue("nDisplayUnit", AequitasCoinUnits::AEQL);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
     
     fUseDarkTheme = settings.value("fUseDarkTheme", false).toBool();
@@ -66,13 +66,13 @@ void OptionsModel::Init()
     if (!settings.contains("nMNengineRounds"))
         settings.setValue("nMNengineRounds", 2);
     nMNengineRounds = settings.value("nMNengineRounds").toLongLong();
-    if (!settings.contains("nAnonymizeEndoxCoinAmount"))
-        settings.setValue("nAnonymizeEndoxCoinAmount", 1000);
-    nAnonymizeEndoxCoinAmount = settings.value("nAnonymizeEndoxCoinAmount").toLongLong();
+    if (!settings.contains("nAnonymizeAequitasCoinAmount"))
+        settings.setValue("nAnonymizeAequitasCoinAmount", 1000);
+    nAnonymizeAequitasCoinAmount = settings.value("nAnonymizeAequitasCoinAmount").toLongLong();
     if (settings.contains("nMNengineRounds"))
         SoftSetArg("-mnenginerounds", settings.value("nMNengineRounds").toString().toStdString());
-    if (settings.contains("nAnonymizeEndoxCoinAmount"))
-        SoftSetArg("-anonymizeEndoxCoinamount", settings.value("nAnonymizeEndoxCoinAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeAequitasCoinAmount"))
+        SoftSetArg("-anonymizeAequitasCoinamount", settings.value("nAnonymizeAequitasCoinAmount").toString().toStdString());
 
 
 
@@ -206,8 +206,8 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return fCoinControlFeatures;
         case MNengineRounds:
             return QVariant(nMNengineRounds);
-        case AnonymizeEndoxCoinAmount:
-            return QVariant(nAnonymizeEndoxCoinAmount);
+        case AnonymizeAequitasCoinAmount:
+            return QVariant(nAnonymizeAequitasCoinAmount);
         case UseDarkTheme:
             return QVariant(fUseDarkTheme);
         default:
@@ -318,10 +318,10 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
             settings.setValue("nMNengineRounds", nMNengineRounds);
             emit mnengineRoundsChanged(nMNengineRounds);
             break;
-        case AnonymizeEndoxCoinAmount:
-            nAnonymizeEndoxCoinAmount = value.toInt();
-            settings.setValue("nAnonymizeEndoxCoinAmount", nAnonymizeEndoxCoinAmount);
-            emit AnonymizeEndoxCoinAmountChanged(nAnonymizeEndoxCoinAmount);
+        case AnonymizeAequitasCoinAmount:
+            nAnonymizeAequitasCoinAmount = value.toInt();
+            settings.setValue("nAnonymizeAequitasCoinAmount", nAnonymizeAequitasCoinAmount);
+            emit AnonymizeAequitasCoinAmountChanged(nAnonymizeAequitasCoinAmount);
             break;
         default:
             break;

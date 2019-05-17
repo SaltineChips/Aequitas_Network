@@ -204,10 +204,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "Stop Endox-Coin server.");
+            "Stop Aequitas-Coin server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Endox-Coin server stopping";
+    return "Aequitas-Coin server stopping";
 }
 
 
@@ -512,7 +512,7 @@ void StartRPCThreads()
     {
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
-        string strWhatAmI = "To use Endox-Coind";
+        string strWhatAmI = "To use Aequitas-Coind";
         if (mapArgs.count("-server"))
             strWhatAmI = strprintf(_("To use the %s option"), "\"-server\"");
         else if (mapArgs.count("-daemon"))
@@ -521,13 +521,13 @@ void StartRPCThreads()
             _("%s, you must set a rpcpassword in the configuration file:\n"
               "%s\n"
               "It is recommended you use the following random password:\n"
-              "rpcuser=Endox-Coinrpc\n"
+              "rpcuser=Aequitas-Coinrpc\n"
               "rpcpassword=%s\n"
               "(you do not need to remember this password)\n"
               "The username and password MUST NOT be the same.\n"
               "If the file does not exist, create it with owner-readable-only file permissions.\n"
               "It is also recommended to set alertnotify so you are notified of problems;\n"
-              "for example: alertnotify=echo %%s | mail -s \"Endox-Coin Alert\" admin@foo.com\n"),
+              "for example: alertnotify=echo %%s | mail -s \"Aequitas-Coin Alert\" admin@foo.com\n"),
                 strWhatAmI,
                 GetConfigFile().string(),
                 EncodeBase58(&rand_pwd[0],&rand_pwd[0]+32)),
@@ -871,7 +871,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 }
 
 std::string HelpExampleCli(string methodname, string args){
-    return "> Endox-Coind " + methodname + " " + args + "\n";
+    return "> Aequitas-Coind " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args){
