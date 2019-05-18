@@ -18,13 +18,13 @@ static const unsigned int timeRegNetGenesis = 1558180800+90; // Saturday, May 18
 /** Genesis Nonce Mainnet*/
 static const unsigned int nNonceMain = 49778;
 /** Genesis Nonce Testnet */
-static const unsigned int nNonceTest = 0;
+static const unsigned int nNonceTest = 13265;
 /** Genesis Nonce Regnet */
 static const unsigned int nNonceReg = 8;
 /** Main Net Genesis Block */
 static const uint256 nGenesisBlock("0x0000c552112fe0a5ee2997139e791bf2fa9c15ced39385ed5756d7ca43531b62");
 /** Test Net Genesis Block */
-static const uint256 hashTestNetGenesisBlock("0x");
+static const uint256 hashTestNetGenesisBlock("0x00018de7c1401239894e433c3bae0141a3bb320aa6ed88cd6601f9004b971a4d");
 /** Reg Net Genesis Block */
 static const uint256 hashRegNetGenesisBlock("0x");
 /** Genesis Merkleroot */
