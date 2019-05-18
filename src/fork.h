@@ -10,8 +10,6 @@
 
 /** Reserve Phase start block */ 
 static const int64_t nReservePhaseStart = 1;
-/** Reserve Phase prolong block */
-static const int64_t nReservePhaseProlong = 290;
 /** Velocity toggle block */
 static const int64_t VELOCITY_TOGGLE = 175; // Implementation of the Velocity system into the chain.
 /** Velocity retarget toggle block */

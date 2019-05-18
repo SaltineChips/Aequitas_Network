@@ -411,7 +411,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 {
     int64_t nSubsidy = nBlockStandardReward;
 
-    int chance = 250000;
+    int chance = 500000;
 
     if(randreward() <= chance) // 25% Chance of superblock
         nSubsidy = nBlockSuperReward;
@@ -445,7 +445,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 {
     int64_t nSubsidy = nBlockStandardReward;
 
-    int chance = 250000;
+    int chance = 500000;
 
     if(randreward() <= chance) // 25% Chance of superblock
         nSubsidy = nBlockSuperReward;
@@ -478,7 +478,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue)
 {
     int64_t ret = 0;
-    ret = (blockValue * 63) / 100; // 63%
+    ret = (blockValue * 40) / 100; // 40%
     return ret;
 }
 
