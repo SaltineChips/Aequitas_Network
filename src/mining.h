@@ -10,17 +10,17 @@
 #include "bignum.h"
 
 /** Minimum nCoinAge required to stake PoS */
-static const unsigned int nStakeMinAge = 2 / 60; // 30 minutes
+static const unsigned int nStakeMinAge = 7 * (24 * 60); // One (1) Week
 /** Time to elapse before new modifier is computed */
 static const unsigned int nModifierInterval = 2 * 60;
 /** Genesis block subsidy */
 static const int64_t nGenesisBlockReward = 1 * COIN;
 /** Reserve block subsidy */
-static const int64_t nBlockRewardReserve = 1000000 * COIN; // 1.69% Reserved for Development ~150million
+static const int64_t nBlockRewardReserve = 1000000 * COIN; // 4.7619047619% Reserved for Development ~One (1)million
 /** Standard block subsidy */
 static const int64_t nBlockStandardReward = 10 * COIN;
 /** Superblock block subsidy */
-static const int64_t nBlockSuperReward = 20 * COIN;
+static const int64_t nBlockSuperReward = 50 * COIN;
 /** Block spacing preferred */
 static const int64_t BLOCK_SPACING = 60;
 /** Block spacing minimum */
@@ -34,7 +34,7 @@ static const int64_t MNengine_COLLATERAL = (1 * COIN);
 /** MNengine pool values */
 static const int64_t MNengine_POOL_MAX = (999 * COIN);
 /** MasterNode required collateral */
-inline int64_t MasternodeCollateral(int nHeight) { return 1000; } // 50K AEQL required as collateral
+inline int64_t MasternodeCollateral(int nHeight) { return 1000; } // 1K AEQL required as collateral
 /** Coinbase transaction outputs can only be staked after this number of new blocks (network rule) */
 static const int nStakeMinConfirmations = 25;
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */

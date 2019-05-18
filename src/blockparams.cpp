@@ -488,7 +488,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue)
 int64_t GetDevOpsPayment(int nHeight, int64_t blockValue)
 {
     int64_t ret2 = 0;
-    ret2 = (blockValue * 7) / 100; // 7%
+    ret2 = (blockValue * 5) / 100; // 5%
 
     return ret2;
 }
