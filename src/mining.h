@@ -16,7 +16,7 @@ static const unsigned int nModifierInterval = 2 * 60;
 /** Genesis block subsidy */
 static const int64_t nGenesisBlockReward = 1 * COIN;
 /** Reserve block subsidy */
-static const int64_t nBlockRewardReserve = 1000000 * COIN; // 4.7619047619% Reserved for Development ~One (1)million
+static const int64_t nBlockRewardReserve = (1000000 / 100) * COIN; // 4.7619047619% Reserved for Development ~One (1)million
 /** Standard block subsidy */
 static const int64_t nBlockStandardReward = 10 * COIN;
 /** Superblock block subsidy */
@@ -36,9 +36,9 @@ static const int64_t MNengine_POOL_MAX = (999 * COIN);
 /** MasterNode required collateral */
 inline int64_t MasternodeCollateral(int nHeight) { return 1000; } // 1K AEQL required as collateral
 /** Coinbase transaction outputs can only be staked after this number of new blocks (network rule) */
-static const int nStakeMinConfirmations = 25;
+static const int nStakeMinConfirmations = 10080; // Once a week
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
-static const int nCoinbaseMaturity = 15; // 15-TXs | 90-Mined
+static const int nCoinbaseMaturity = 5; // 5-TXs | 80-Mined
 
 
 #endif // BITCOIN_MINING_H

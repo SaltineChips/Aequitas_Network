@@ -279,10 +279,10 @@ void VRX_ThreadCurve(const CBlockIndex* pindexLast, bool fProofOfStake)
             // Normal Run
             else if(!fDebug)
             {
-                if(difTimePoS > 1 * 60 * 60) { TerminalAverage /= 2; }
-                if(difTimePoS > 2 * 60 * 60) { TerminalAverage /= 2; }
-                if(difTimePoS > 3 * 60 * 60) { TerminalAverage /= 2; }
-                if(difTimePoS > 4 * 60 * 60) { TerminalAverage /= 2; }
+                if(difTimePoS > 1 * 60 * 60 * 24 * 7) { TerminalAverage /= 2; }
+                if(difTimePoS > 2 * 60 * 60 * 24 * 7) { TerminalAverage /= 2; }
+                if(difTimePoS > 3 * 60 * 60 * 24 * 7) { TerminalAverage /= 2; }
+                if(difTimePoS > 4 * 60 * 60 * 24 * 7) { TerminalAverage /= 2; }
             }
         }
         else if(!fProofOfStake)
@@ -420,7 +420,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
         if(pindexBest->nMoneySupply < (nBlockRewardReserve * 100)) {
             nSubsidy = nBlockRewardReserve;
         }
-        else if(nHeight > nReservePhaseProlong) {
+        else if(nHeight) {
             if(pindexBest->nMoneySupply < (nBlockRewardReserve * 167)) {
                 nSubsidy = nBlockRewardReserve;
             }
@@ -454,7 +454,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
         if(pindexBest->nMoneySupply < (nBlockRewardReserve * 100)) {
             nSubsidy = nBlockRewardReserve;
         }
-        else if(pindexPrev->nHeight+1 > nReservePhaseProlong) {
+        else if(pindexPrev->nHeight+1) {
             if(pindexBest->nMoneySupply < (nBlockRewardReserve * 167)) {
                 nSubsidy = nBlockRewardReserve;
             }
