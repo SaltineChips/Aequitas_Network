@@ -229,7 +229,7 @@ AequitasCoinGUI::AequitasCoinGUI(QWidget *parent):
 
     if (!fUseDarkTheme)
     {
-        statusBar()->setStyleSheet("#statusBar { color: #03a073; background-color: #083018; }");
+        statusBar()->setStyleSheet("#statusBar { color: #03a073; background-color: #876e2c; }"); // Experimental Color
     }
 
     syncIconMovie = new QMovie(fUseDarkTheme ? ":/movies/update_spinner_black" : ":/movies/update_spinner", "mng", this);
@@ -443,12 +443,12 @@ void AequitasCoinGUI::createToolBars()
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
     toolbar->setObjectName("tabs");
-    toolbar->setStyleSheet("QToolButton { color: #ffffff; font-weight:bold; } QToolButton:hover { background-color: #8d30e1; } QToolButton:checked { background-color: #026cd9 } QToolButton:pressed { background-color: #07bffd; } #tabs { color: #ffffff; background-color: #1d1f22; }");
+    toolbar->setStyleSheet("QToolButton { color: #ffffff; font-weight:bold; } QToolButton:hover { background-color: #a58635; } QToolButton:checked { background-color: #6a5622 } QToolButton:pressed { background-color: #876e2c; } #tabs { color: #ffffff; background-color: #1d1f22; }");
     toolbar->setIconSize(QSize(24,24));
 
     if(!fUseDarkTheme)
     {
-        toolbar->setStyleSheet("QToolButton { color: #ffffff; font-weight:bold; } QToolButton:hover { background-color: #065617; } QToolButton:checked { background-color: #03a073; } QToolButton:pressed { background-color: #10762c; } #tabs { color: #ffffff; background-color: #083018; }");
+        toolbar->setStyleSheet("QToolButton { color: #ffffff; font-weight:bold; } QToolButton:hover { background-color: #d9a100; } QToolButton:checked { background-color: #8b6700; } QToolButton:pressed { background-color: #b28400; } #tabs { color: #ffffff; background-color: #b4923a; }");
     }
 
     QLabel* header = new QLabel();
