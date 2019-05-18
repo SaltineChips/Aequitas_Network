@@ -79,10 +79,10 @@ public:
         /** Genesis Block MainNet */
         /*
         Hashed MainNet Genesis Block Output
-        block.hashMerkleRoot == e7de676978b0c7cc62b0ed631929044ac04c9143c83833f4f46cf347a0ac9a94
-        block.nTime = 1544904000
-        block.nNonce = 24768
-        block.GetHash = 00006dfa0fec1755bed8d26474969c29fcc63e2e7abd6032e79e548c15094767
+        block.hashMerkleRoot == 7a5fd9fc575ec5ebee9e2d9ece344ffb75e5bfe0917bbc91ba260cfa1db094e1
+        block.nTime = 1558180800
+        block.nNonce = 49778
+        block.GetHash = 0000c552112fe0a5ee2997139e791bf2fa9c15ced39385ed5756d7ca43531b62
         */
 
         hashGenesisBlock = genesis.GetHash();
@@ -147,10 +147,10 @@ public:
         /** Genesis Block TestNet */
         /*
         Hashed TestNet Genesis Block Output
-        block.hashMerkleRoot == e7de676978b0c7cc62b0ed631929044ac04c9143c83833f4f46cf347a0ac9a94
-        block.nTime = 1544904030
-        block.nNonce = 2868
-        block.GetHash = 0002a59dd63d5fa8b515f15144ce6a7ada594e63371f652f833e555e7e3b33b7
+        block.hashMerkleRoot == 7a5fd9fc575ec5ebee9e2d9ece344ffb75e5bfe0917bbc91ba260cfa1db094e1
+        block.nTime = 1558180830
+        block.nNonce = 13265
+        block.GetHash = 00018de7c1401239894e433c3bae0141a3bb320aa6ed88cd6601f9004b971a4d
         */
 
         hashGenesisBlock = genesis.GetHash();
@@ -193,12 +193,12 @@ public:
         /** Genesis Block RegNet */
         /*
         Hashed RegNet Genesis Block Output
-        block.hashMerkleRoot == e7de676978b0c7cc62b0ed631929044ac04c9143c83833f4f46cf347a0ac9a94
-        block.nTime = 1544904090
+        block.hashMerkleRoot == 7a5fd9fc575ec5ebee9e2d9ece344ffb75e5bfe0917bbc91ba260cfa1db094e1
+        block.nTime = 1558180890
         block.nNonce = 8
-        block.GetHash = 3762eb656c953854e41c33f6691bd723cca09817d4a6b7bae214e88e3c3c73d4
-
+        block.GetHash = d13d22b700db8b54f0dee3960949fffc8a6ef2475d50e96888656ab5fe440269
         */
+
         assert(hashGenesisBlock == hashRegNetGenesisBlock);
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.

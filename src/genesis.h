@@ -26,7 +26,7 @@ static const uint256 nGenesisBlock("0x0000c552112fe0a5ee2997139e791bf2fa9c15ced3
 /** Test Net Genesis Block */
 static const uint256 hashTestNetGenesisBlock("0x00018de7c1401239894e433c3bae0141a3bb320aa6ed88cd6601f9004b971a4d");
 /** Reg Net Genesis Block */
-static const uint256 hashRegNetGenesisBlock("0x");
+static const uint256 hashRegNetGenesisBlock("0xd13d22b700db8b54f0dee3960949fffc8a6ef2475d50e96888656ab5fe440269");
 /** Genesis Merkleroot */
 static const uint256 nGenesisMerkle("0x7a5fd9fc575ec5ebee9e2d9ece344ffb75e5bfe0917bbc91ba260cfa1db094e1");
 
