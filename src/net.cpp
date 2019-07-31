@@ -945,20 +945,14 @@ void SocketSendData(CNode *pnode)
                 break;
             }
         } else {
-            if (nBytes < 0) {
-                // error
-                int nErr = WSAGetLastError();
-                if (nErr != WSAEWOULDBLOCK && nErr != WSAEMSGSIZE && nErr != WSAEINTR && nErr != WSAEINPROGRESS)
-                {
-                    LogPrintf("socket send error %d\n", nErr);
-                    IdleNodeCheck(pnode);
-                    break;
-                }
+            if (nBytes == 0) {
+                // couldn't send anything at all
+                LogPrintf("socket send error: data failure\n");
+                pnode->CloseSocketDisconnect();
+                break;
             }
 
-            // couldn't send anything at all
-            LogPrintf("socket send error: data failure\n");
-            IdleNodeCheck(pnode);
+            pnode->CloseSocketDisconnect();
             break;
         }
     }
@@ -1267,21 +1261,32 @@ void ThreadSocketHandler()
 
             if (GetTime() - pnode->nTimeConnected > IDLE_TIMEOUT)
             {
+                // First see if we've received/sent anything
                 if (pnode->nLastRecv == 0 || pnode->nLastSend == 0)
                 {
+                    // Disconnect if we have a completely stale connection
                     LogPrint("net", "socket no message in timeout, %d %d\n", pnode->nLastRecv != 0, pnode->nLastSend != 0);
                     pnode->fDisconnect = true;
                     pnode->CloseSocketDisconnect();
                 }
+                // Send timeout
                 else if (GetTime() - pnode->nLastSend > DATA_TIMEOUT)
                 {
                     LogPrintf("socket not sending\n");
                     pnode->fDisconnect = true;
                     pnode->CloseSocketDisconnect();
                 }
+                // Receive timeout
                 else if (GetTime() - pnode->nLastRecv > DATA_TIMEOUT)
                 {
                     LogPrintf("socket inactivity timeout\n");
+                    pnode->fDisconnect = true;
+                    pnode->CloseSocketDisconnect();
+                }
+                // Ping timeout
+                else if (pnode->nPingNonceSent && pnode->nPingUsecStart + TIMEOUT_INTERVAL * 1000000 < GetTimeMicros())
+                {
+                    LogPrintf("ping timeout: %fs\n", 0.000001 * (GetTimeMicros() - pnode->nPingUsecStart));
                     pnode->fDisconnect = true;
                     pnode->CloseSocketDisconnect();
                 }
